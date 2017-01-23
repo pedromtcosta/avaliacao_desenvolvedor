@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4583B283-D849-4B27-A429-ACF543E63CEE}</ProjectGuid>
+    <ProjectGuid>{C1633C8A-4E55-4A8E-B202-C62D12E8EBD1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AvaliacaoWorkingHub.Services.Tests</RootNamespace>
-    <AssemblyName>AvaliacaoWorkingHub.Services.Tests</AssemblyName>
+    <RootNamespace>AvaliacaoWorkingHub.Web.Tests</RootNamespace>
+    <AssemblyName>AvaliacaoWorkingHub.Web.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -47,11 +47,40 @@
       <HintPath>..\packages\FluentAssertions.4.18.0\lib\net45\FluentAssertions.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Moq, Version=4.5.30.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.5.30\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
@@ -68,31 +97,30 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="FileParserTests.cs" />
+    <Compile Include="VendasControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ArquivoVendasLineParserTests.cs" />
-    <Compile Include="VendasServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AvaliacaoWorkingHub.Data.Contracts\AvaliacaoWorkingHub.Data.Contracts.csproj">
-      <Project>{79BD4797-EEFD-4AB5-927B-C33F05769177}</Project>
-      <Name>AvaliacaoWorkingHub.Data.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AvaliacaoWorkingHub.Models\AvaliacaoWorkingHub.Models.csproj">
-      <Project>{1b1c6c16-56ef-4896-bd68-1c8b91e00b62}</Project>
+      <Project>{1B1C6C16-56EF-4896-BD68-1C8B91E00B62}</Project>
       <Name>AvaliacaoWorkingHub.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\AvaliacaoWorkingHub.Services.Contracts\AvaliacaoWorkingHub.Services.Contracts.csproj">
-      <Project>{d38bba99-7066-4408-b71a-cef38dd2c1ba}</Project>
+      <Project>{D38BBA99-7066-4408-B71A-CEF38DD2C1BA}</Project>
       <Name>AvaliacaoWorkingHub.Services.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\AvaliacaoWorkingHub.Services\AvaliacaoWorkingHub.Services.csproj">
-      <Project>{a20e7494-be74-4f47-a56f-43922c6998a8}</Project>
+      <Project>{A20E7494-BE74-4F47-A56F-43922C6998A8}</Project>
       <Name>AvaliacaoWorkingHub.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AvaliacaoWorkingHub.Web\AvaliacaoWorkingHub.Web.csproj">
+      <Project>{18F86C1A-A397-47C9-8BAF-2BFE36150F80}</Project>
+      <Name>AvaliacaoWorkingHub.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

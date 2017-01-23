@@ -1,0 +1,64 @@
+﻿@model AvaliacaoWorkingHub.Web.Controllers.VendasUploadModel
+
+@{
+    ViewBag.Title = "Upload";
+}
+
+<h2>Upload de Vendas</h2>
+<hr />
+
+@if (Model?.ErrorMessage != null)
+{
+    <div class="alert alert-danger">
+        @Model.ErrorMessage
+    </div>
+}
+
+@if (Model?.UploadedData != null)
+{
+    <div class="alert alert-success">
+        Registros importados com sucesso!
+    </div>
+}
+
+<form action="@Url.Action("Upload")" method="post" enctype="multipart/form-data">
+    <input type="file" name="File" class="file" />
+
+    <br />
+    <button class="btn btn-lg btn-default" type="submit">
+        <span class="glyphicon glyphicon-upload"></span> Upload
+    </button>
+</form>
+
+@if (Model?.UploadedData != null)
+{
+    <br />
+
+    <h4>Receita bruta da importação: @Model.ReceitaBruta.ToString("c")</h4>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Comprador</th>
+                <th>Descrição</th>
+                <th>Preço Unitário</th>
+                <th>Quantidade</th>
+                <th>Endereço</th>
+                <th>Fornecedor</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.UploadedData)
+            {
+                <tr>
+                    <td>@item.Comprador</td>
+                    <td>@item.Descricao</td>
+                    <td>@item.PrecoUnitario.ToString("c")</td>
+                    <td>@item.Quantidade</td>
+                    <td>@item.Endereco</td>
+                    <td>@item.Fornecedor</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

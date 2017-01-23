@@ -40,8 +40,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileParser.cs" />
+    <Compile Include="NumericFieldParseException.cs" />
+    <Compile Include="ArquivoVendasLineParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VendasService.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AvaliacaoWorkingHub.Data.Contracts\AvaliacaoWorkingHub.Data.Contracts.csproj">
+      <Project>{79BD4797-EEFD-4AB5-927B-C33F05769177}</Project>
+      <Name>AvaliacaoWorkingHub.Data.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AvaliacaoWorkingHub.Models\AvaliacaoWorkingHub.Models.csproj">
+      <Project>{1B1C6C16-56EF-4896-BD68-1C8B91E00B62}</Project>
+      <Name>AvaliacaoWorkingHub.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AvaliacaoWorkingHub.Services.Contracts\AvaliacaoWorkingHub.Services.Contracts.csproj">
+      <Project>{d38bba99-7066-4408-b71a-cef38dd2c1ba}</Project>
+      <Name>AvaliacaoWorkingHub.Services.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
